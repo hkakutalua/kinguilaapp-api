@@ -1,10 +1,14 @@
-﻿using AutoMapper;
+﻿using System;
+using System.IO;
+using System.Reflection;
+using AutoMapper;
 using KinguilaAppApi.ApiMapping;
 using KinguilaAppApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace KinguilaAppApi
 {
@@ -22,8 +26,25 @@ namespace KinguilaAppApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
             services.AddAutoMapper();
+            
+            services.AddSwaggerGen(setup =>
+            {
+               setup.SwaggerDoc("v1", new Info
+               {
+                   Title = "KinguilaApp API",
+                   Version = "v1",
+                   Contact = new Contact
+                   {
+                       Name = "Henrick Kakutalua",
+                       Email = "henrykeys96@gmail.com", 
+                       Url = "https://medium.com/@henrickpedro"
+                   }
+               });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                setup.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFile));
+            });
 
             services.AddTransient<IExchangeRateService, KinguilaHojeExchangeRateService>();
             services.AddTransient<IPageTextualInformationParser, KinguilaHojeTextualInformationParser>();
@@ -38,6 +59,13 @@ namespace KinguilaAppApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(setup =>
+            {
+                setup.SwaggerEndpoint("/swagger/v1/swagger.json", "KinguilaApp API");
+                setup.RoutePrefix = string.Empty;
+            });
 
             app.UseMvc();
         }

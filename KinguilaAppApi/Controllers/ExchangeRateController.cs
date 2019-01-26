@@ -26,8 +26,18 @@ namespace KinguilaAppApi.Controllers
             _mapper = mapper;
         }
         
+        /// <summary>
+        /// Gets the exchange rate of the specified currency
+        /// </summary>
+        /// <param name="currency">The currency to get the exchange rate from</param>
+        /// <remarks>
+        /// Sample Request:
+        ///     GET /api/v1/exchanges/all
+        /// </remarks>
         [HttpGet("{currency}")]
-        public async Task<IActionResult> Last([FromRoute]string currency)
+        [ProducesResponseType(typeof(IEnumerable<ExchangeRatesViewModel>), 200)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> GetExchanges([FromRoute]string currency)
         {
             if (currency.Equals("all"))
             {
