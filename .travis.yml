@@ -3,7 +3,10 @@ solution: KinguilaAppApi.sln
 mono: none
 dotnet: 2.1.502
 install:
-  - dotnet restore
+- dotnet restore
 script:
-  - dotnet build
-  - dotnet test
+- dotnet build
+- dotnet test
+deploy:
+  api_key:
+    secure: CT/WfCVDHERY1CBKD14ZRtEKcR0H7Mv0EWZpty691GQZnXLQ60UrjPl64WrDuIIMKAnC8z+Fdggptv3BvdyXOi3RlH+7iF1G3+yvh90HVVADoiMMG4Fz54NeyLgeSb240v82QO5JxbdmxTfr63Uo1ZItHs5ElC350ts1XgMoNiTXvNBxIxzNaz/xXYupdPbBMgRM/HWDnaN6rIoIMkP5a4XX9k3wwqmlmsqPJF1E93lhJFwYHhO+6iSAx7UKYLfSsLk4D4p1CRzO5bUUiqyTIU6Ioo7Vp9seAn1TuZcv8rL88lzAMyUYXfTwF14qc85FaLcEKu/ZbBPas89RmlBZpYiRltyUUroXL2YFSbLPtrAiHvRHFQyg7sdONZhmfip3LHsqo4A9n8mnhBud3QoCN/TfWZLsggDPrWdh1i6WzSYSsCFzzOiRMm/LAHb9fl4J4ipOJ0q5byP6mpRC8/TmkJ0UYwhSf+GbGzGiudW0C3iRgf7MQyvR8t9pDTwgSiow4krF4+oXxYzfYeG3y3s6ZiUmW4J2LrLOA43tWGgJcVul9ronLZ4hFoRPlrwi7gw98OQbB5rBoyp3Jc2yhsb5uJhRgeI5F1RmoIB6ndXH08rHmFbl7Jb6EEqLQtprNgamJZVbJI1OQNEo5Um8pJDzo0yihj0VqJuKUIz9OUIGl9s=
