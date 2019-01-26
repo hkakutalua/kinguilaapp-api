@@ -2,7 +2,7 @@ using AutoMapper;
 using KinguilaAppApi.Models;
 using KinguilaAppApi.ViewModels;
 
-namespace KinguilaAppApi.MappingProfiles
+namespace KinguilaAppApi.ApiMapping
 {
     public class CurrencyRateMappingProfile : Profile
     {

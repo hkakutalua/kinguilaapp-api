@@ -22,40 +22,6 @@ namespace KinguilaAppApi.Models
             Currency = currency;
             Amount = amount;
         }
-        
-        public static CurrencyRate Parse(string currencyRate)
-        {
-            string[] tokens = currencyRate.Split()
-                .Where(x => x != string.Empty)
-                .ToArray();
-            
-            if (tokens.Length != 2)
-                throw new ArgumentException($"The {nameof(currencyRate)} token count can't be different of 2", nameof(currencyRate));
-
-            string currencySymbol = tokens[0];
-            decimal amount = decimal.Parse(tokens[1]);
-            
-            if (!IsValidCurrency(currencySymbol))
-                throw new ArgumentException("The currency symbol specified is invalid", nameof(currencyRate));
-            
-            if (amount <= 0)
-                throw new ArgumentOutOfRangeException(nameof(currencyRate), "The currency rate amount must be positive");
-
-            return new CurrencyRate(ParseCurrency(currencySymbol), amount);
-        }
-
-        private static bool IsValidCurrency(string currencySymbol)
-        {
-            return _stringToCurrenciesDictionary.Any(keyValuePair => keyValuePair.Key.Equals(currencySymbol));
-        }
-
-        private static Currency ParseCurrency(string currencySymbol)
-        {
-            if (!IsValidCurrency(currencySymbol))
-                throw new ArgumentException(currencySymbol);
-
-            return _stringToCurrenciesDictionary[currencySymbol];
-        }
 
 
         public bool Equals(CurrencyRate other)

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using KinguilaAppApi.MappingProfiles;
+using KinguilaAppApi.ApiMapping;
 using KinguilaAppApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +26,9 @@ namespace KinguilaAppApi
             services.AddAutoMapper();
 
             services.AddTransient<IExchangeRateService, KinguilaHojeExchangeRateService>();
+            services.AddTransient<IPageTextualInformationParser, KinguilaHojeTextualInformationParser>();
+            services.AddSingleton<KinguilaHojeSourceMapper>();
+            services.AddTransient<IDateProvider>(x => DateProvider.Default());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
