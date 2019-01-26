@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace kinguilaapp_api
+namespace KinguilaAppApi
 {
     public class Program
     {
