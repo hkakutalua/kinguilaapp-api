@@ -21,7 +21,10 @@ To run the project, you simply need to go to KinguilaAppApi subdirectory, where 
 The project will run by default at 5000 and 5001 ports, for HTTP and HTTPS respectively.
 
 ## Documentation
-TODO: Generate Swagger Documentation
+This request below will return the exchange rate for all supported currencies in our API:
+https://kinguilaapp.herokuapp.com/api/v1/exchanges/all
+
+You can check for more endpoints [accessing the documentation](https://kinguilaapp.herokuapp.com/).
 
 ## Running the Tests
 To run all the tests (both the unit and integration tests), go to the root folder of the project with the command-line and type:
