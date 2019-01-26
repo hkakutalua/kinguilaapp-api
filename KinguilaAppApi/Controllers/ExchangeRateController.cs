@@ -9,13 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KinguilaAppApi.Controllers
 {
-    [Route("api/v1/exchange")]
+    [Route("api/v1/exchanges")]
     public class ExchangeRateController : Controller
     {
-        private const string AllCurrenciesCode = "all";
-        private const string UnitedStatesDollarCode = "usd";
-        private const string EuroCode = "eur";
-        
         private readonly IExchangeRateService _exchangeRateService;
         private readonly IMapper _mapper;
 
@@ -30,11 +26,16 @@ namespace KinguilaAppApi.Controllers
             _mapper = mapper;
         }
         
-        [HttpGet("{currency}/[action]")]
+        [HttpGet("{currency}")]
         public async Task<IActionResult> Last([FromRoute]string currency)
         {
-            IEnumerable<ExchangeRates> exchangeRates = await _exchangeRateService.GetExchangeRateForAllCurrencies();
-            return Ok(_mapper.Map<IEnumerable<ExchangeRatesViewModel>>(exchangeRates));
+            if (currency.Equals("all"))
+            {
+                IEnumerable<ExchangeRates> exchangeRates = await _exchangeRateService.GetExchangeRateForAllCurrencies();
+                return Ok(_mapper.Map<IEnumerable<ExchangeRatesViewModel>>(exchangeRates));
+            }
+
+            return NotFound();
         }
     }
 }
