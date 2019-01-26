@@ -1,5 +1,5 @@
 # KinguilaApp API
-![CI Status](https://travis-ci.org/Henry-Keys/kinguilaapp-api.svg?branch=master)
+[![Build Status](https://travis-ci.com/Henry-Keys/kinguilaapp-api.svg?branch=master)]
 
 An HTTP REST API that provides exchange rates for Kwanza-Euro and Kwanza-US Dollars both from the official market (Banco Nacional de Angola), as well from the informal market, also known as Kinguilas.
 
