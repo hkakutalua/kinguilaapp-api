@@ -21,11 +21,7 @@ namespace KinguilaAppApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(setup =>
-            {
-                if (HostingEnvironment.IsProduction())
-                    setup.Filters.Add(new RequireHttpsAttribute());
-            });
+            services.AddMvc();
 
             services.AddAutoMapper();
 
