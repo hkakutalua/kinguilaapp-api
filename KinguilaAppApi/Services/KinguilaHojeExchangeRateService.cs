@@ -27,7 +27,7 @@ namespace KinguilaAppApi.Services
             _kinguilaHojeSourceMapper = kinguilaHojeSourceMapper;
         }
         
-        public async Task<IEnumerable<ExchangeRates>> GetExchangeRateForAllCurrencies()
+        public async Task<IEnumerable<ExchangeRates>> GetExchangeRateFromAllSources()
         {
             Uri kinguilaHojeUri = new Uri("http://www.kinguilahoje.com/");
             

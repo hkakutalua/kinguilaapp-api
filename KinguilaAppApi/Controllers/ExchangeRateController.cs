@@ -27,21 +27,21 @@ namespace KinguilaAppApi.Controllers
         }
         
         /// <summary>
-        /// Gets the exchange rate of the specified currency
+        /// Gets the exchange rate of the specified source
         /// </summary>
-        /// <param name="currency">The currency to get the exchange rate from</param>
+        /// <param name="source">The source to get the currency exchange from</param>
         /// <remarks>
         /// Sample Request:
         ///     GET /api/v1/exchanges/all
         /// </remarks>
-        [HttpGet("{currency}")]
+        [HttpGet("{source}")]
         [ProducesResponseType(typeof(IEnumerable<ExchangeRatesViewModel>), 200)]
         [ProducesResponseType(404)]
-        public async Task<IActionResult> GetExchanges([FromRoute]string currency)
+        public async Task<IActionResult> GetExchanges([FromRoute]string source)
         {
-            if (currency.Equals("all"))
+            if (source.Equals("all"))
             {
-                IEnumerable<ExchangeRates> exchangeRates = await _exchangeRateService.GetExchangeRateForAllCurrencies();
+                IEnumerable<ExchangeRates> exchangeRates = await _exchangeRateService.GetExchangeRateFromAllSources();
                 return Ok(_mapper.Map<IEnumerable<ExchangeRatesViewModel>>(exchangeRates));
             }
 

@@ -6,6 +6,6 @@ namespace KinguilaAppApi.Services
 {
     public interface IExchangeRateService
     {
-        Task<IEnumerable<ExchangeRates>> GetExchangeRateForAllCurrencies();
+        Task<IEnumerable<ExchangeRates>> GetExchangeRateFromAllSources();
     }
 }

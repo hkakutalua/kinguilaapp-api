@@ -22,11 +22,6 @@ namespace KinguilaAppApi.Models
         }
 
         public static IEnumerable<ExchangeRateSource> GetAll() => Enumeration.GetAll<ExchangeRateSource>();
-        
-        public static IEnumerable<string> GetAllAsStrings() => GetAll().Select(x => x.SourceName);
-
-        public static ExchangeRateSource Parse(string sourceName) =>
-            GetAll().First(x => x.SourceName.Equals(sourceName));
 
         public bool Equals(string source)
         {

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinguilaAppApi", "KinguilaA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinguilaAppApi.UnitTests", "KinguilaAppApi.UnitTests\KinguilaAppApi.UnitTests.csproj", "{CCB2A929-43EB-4C80-A0B4-EC68E9C82468}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinguilaAppApi.IntegrationTests", "KinguilaAppApi.IntegrationTests\KinguilaAppApi.IntegrationTests.csproj", "{CE37386C-8D8B-4807-972E-D0D9F2114CAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{CCB2A929-43EB-4C80-A0B4-EC68E9C82468}.Release|x64.Build.0 = Release|Any CPU
 		{CCB2A929-43EB-4C80-A0B4-EC68E9C82468}.Release|x86.ActiveCfg = Release|Any CPU
 		{CCB2A929-43EB-4C80-A0B4-EC68E9C82468}.Release|x86.Build.0 = Release|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Debug|x64.Build.0 = Debug|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Debug|x86.Build.0 = Debug|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Release|x64.ActiveCfg = Release|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Release|x64.Build.0 = Release|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Release|x86.ActiveCfg = Release|Any CPU
+		{CE37386C-8D8B-4807-972E-D0D9F2114CAE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
