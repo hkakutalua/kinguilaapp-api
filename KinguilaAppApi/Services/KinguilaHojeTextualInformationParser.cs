@@ -76,7 +76,7 @@ namespace KinguilaAppApi.Services
             if (!CanParse(date))
                 throw new ArgumentException("The specified date is invalid", nameof(date));
                 
-            string dayAndMonth = date.Replace("Actualizado em", string.Empty);
+            string dayAndMonth = date.Replace("Actualizado desde", string.Empty);
             string[] tokens = dayAndMonth.Split("/");
 
             int day = int.Parse(tokens[0]);
@@ -88,10 +88,10 @@ namespace KinguilaAppApi.Services
 
         private bool CanParse(string date)
         {
-            if (date.IndexOf("Actualizado em") != 0)
+            if (date.IndexOf("Actualizado desde") != 0)
                 return false;
             
-            date = date.Replace("Actualizado em", string.Empty);
+            date = date.Replace("Actualizado desde", string.Empty);
 
             string[] tokens = date.Split("/");
             string day = tokens[0];
