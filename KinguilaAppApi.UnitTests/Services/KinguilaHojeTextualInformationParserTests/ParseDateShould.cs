@@ -8,18 +8,18 @@ namespace KinguilaAppApi.UnitTests.Services.KinguilaHojeTextualInformationParser
     public class ParseDateShould
     {
         [Theory]
-        [InlineData("Actualizado desde 20/Janeiro", 1, 20)]
-        [InlineData("Actualizado desde 20/Fevereiro", 2, 20)]
-        [InlineData("Actualizado desde 20/Março", 3, 20)]
-        [InlineData("Actualizado desde 20/Abril", 4, 20)]
-        [InlineData("Actualizado desde 20/Maio", 5, 20)]
-        [InlineData("Actualizado desde 20/Junho", 6, 20)]
-        [InlineData("Actualizado desde 20/Julho", 7, 20)]
-        [InlineData("Actualizado desde 20/Agosto", 8, 20)]
-        [InlineData("Actualizado desde 20/Setembro", 9, 20)]
-        [InlineData("Actualizado desde 20/Outubro", 10, 20)]
-        [InlineData("Actualizado desde 20/Novembro", 11, 20)]
-        [InlineData("Actualizado desde 20/Dezembro", 12, 20)]
+        [InlineData("Atualizado desde 20/Janeiro", 1, 20)]
+        [InlineData("Atualizado desde 20/Fevereiro", 2, 20)]
+        [InlineData("Atualizado desde 20/Março", 3, 20)]
+        [InlineData("Atualizado desde 20/Abril", 4, 20)]
+        [InlineData("Atualizado desde 20/Maio", 5, 20)]
+        [InlineData("Atualizado desde 20/Junho", 6, 20)]
+        [InlineData("Atualizado desde 20/Julho", 7, 20)]
+        [InlineData("Atualizado desde 20/Agosto", 8, 20)]
+        [InlineData("Atualizado desde 20/Setembro", 9, 20)]
+        [InlineData("Atualizado desde 20/Outubro", 10, 20)]
+        [InlineData("Atualizado desde 20/Novembro", 11, 20)]
+        [InlineData("Atualizado desde 20/Dezembro", 12, 20)]
         public void ParseDateGivenCorrectInput(string dateInput, int expectedMonth, int expectedDay)
         {
             KinguilaHojeTextualInformationParser parser = GetDefaultParser();
